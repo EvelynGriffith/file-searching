@@ -1,4 +1,4 @@
-# TODO: add a module-level docstring to describe the purpose of this program
+"""Find, open, and read file to gather a specific text."""
 
 from pathlib import Path
 
@@ -8,12 +8,18 @@ import typer
 
 # TODO: create a Typer object to support the command-line interface
 
-
 def confirm_valid_file(file: Path) -> bool:
     """Confirm that the provided file is a valid path."""
-    # TODO: determine if the file is not None and if it is a file
-    # TODO: return a value to indicate if the file is valid
+    # determine if the file is not None and if it is a file
+    path_to_file = 'input/proactive.txt'
+    path = Path(path_to_file)
+    path.is_file()
+    if file is not None:
+        if path.is_file():
+        
+    # return a value to indicate if the file is valid
     # by checking that the is_file() function returns True
+            return True
     # TODO: This function should return True when the file is
     # not None and it is also a valid file. Otherwise, this
     # function should return False to indicate it is not value.
