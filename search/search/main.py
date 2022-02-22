@@ -14,13 +14,12 @@ def confirm_valid_file(file: Path) -> bool:
     path_to_file = 'input/proactive.txt'
     path = Path(path_to_file)
     path.is_file()
-    if file is not None:
-        if path.is_file():
-        
     # return a value to indicate if the file is valid
     # by checking that the is_file() function returns True
+    if file is not None:
+        if path.is_file():
             return True
-    # TODO: This function should return True when the file is
+    # This function should return True when the file is
     # not None and it is also a valid file. Otherwise, this
     # function should return False to indicate it is not value.
     return False
@@ -28,9 +27,13 @@ def confirm_valid_file(file: Path) -> bool:
 
 def human_readable_boolean(answer: bool) -> str:
     """Produce a human-readable Yes or No for a boolean value of True or False."""
-    # TODO: determine if the boolean value is True or False
-    # TODO: if the input variable answer is True, then return "Yes"
-    # TODO: if the input variable answer is False, then return "No"
+    # determine if the boolean value is True or False
+    if confirm_valid_file is True:
+    # if the input variable answer is True, then return "Yes"
+        print("Yes")
+    # if the input variable answer is False, then return "No"
+    else:
+        print("no")
 
 
 def word_search(text: str, word: str) -> bool:
