@@ -7,6 +7,8 @@ from rich.console import Console
 
 import typer
 
+cli = typer.Typer()
+
 # TODO: create a Typer object to support the command-line interface
 
 def confirm_valid_file(file: Path) -> bool:
@@ -38,7 +40,7 @@ def human_readable_boolean(answer: bool) -> str:
 
 
 def word_search(text: str, word: str) -> bool:
-    """Determine whether or not a word is found in the text in case-sensitive fashion."""
+    """Determine whether or no.. a word is found in the text in case-sensitive fashion."""
     # perform a case-sensitive search for the word in the provided text
     file1 = open("input/proactive.txt", "r")
     text = file1.read()
@@ -63,10 +65,14 @@ def word(
     # consult the expected output on the course web site for a description
     # of what type of output your program needs to produce when running in the terminal window
     # display a message to explain the file that will be input
-    files = str(f":smiley: Searching throug the file called input/proactive.txt!")
-    # TODO: confirm the file is valid and so the program should search through it for the word
+    file = str(f":smiley: Searching throug the file called input/proactive.txt!")
+    # confirm the file is valid and so the program should search through it for the word
     words = str(f"Was the word {word} found in the file? {word_search}")
     # --> TODO: read in the contents of the file
-    # --> TODO: search for the word in the contents of the file by calling function
+        file1 = open("input/proactive.txt", "r")
+        text = file1.read()
+    # --> search for the word in the contents of the file by calling function
+            if word in file1:
+                return words
     # --> TODO: display a message about whether the word was or was not found
     # TODO: since the file was not valid and thus you cannot install it display a message
