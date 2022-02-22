@@ -39,9 +39,13 @@ def human_readable_boolean(answer: bool) -> str:
 
 def word_search(text: str, word: str) -> bool:
     """Determine whether or not a word is found in the text in case-sensitive fashion."""
-    # TODO: perform a case-sensitive search for the word in the provided text
+    # perform a case-sensitive search for the word in the provided text
     file1 = open("input/proactive.txt", "r")
-    readfile = file1.read()
+    text = file1.read()
+    if word in text:
+        return True
+    else:
+        return False
 
 @cli.command()
 def word(
