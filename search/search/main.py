@@ -1,6 +1,7 @@
 """Find, open, and read file to gather a specific text."""
 
 from pathlib import Path
+from pickletools import string1
 
 from rich.console import Console
 
@@ -17,7 +18,7 @@ def confirm_valid_file(file: Path) -> bool:
     # return a value to indicate if the file is valid
     # by checking that the is_file() function returns True
     if file is not None:
-        if path.is_file():
+        if file.is_file():
             return True
     # This function should return True when the file is
     # not None and it is also a valid file. Otherwise, this
@@ -39,7 +40,8 @@ def human_readable_boolean(answer: bool) -> str:
 def word_search(text: str, word: str) -> bool:
     """Determine whether or not a word is found in the text in case-sensitive fashion."""
     # TODO: perform a case-sensitive search for the word in the provided text
-
+    file1 = open("input/proactive.txt", "r")
+    readfile = file1.read()
 
 @cli.command()
 def word(
@@ -54,10 +56,12 @@ def word(
     console.print()
     # create the full name of the file
     file_fully_qualified = dir / file
-    # TODO: consult the expected output on the course web site for a description
+    # consult the expected output on the course web site for a description
     # of what type of output your program needs to produce when running in the terminal window
-    # TODO: display a message to explain the file that will be input
+    # display a message to explain the file that will be input
+    files = str(f":smiley: Searching throug the file called input/proactive.txt!")
     # TODO: confirm the file is valid and so the program should search through it for the word
+    words = str(f"Was the word {word} found in the file? {word_search}")
     # --> TODO: read in the contents of the file
     # --> TODO: search for the word in the contents of the file by calling function
     # --> TODO: display a message about whether the word was or was not found
