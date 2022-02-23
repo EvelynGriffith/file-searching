@@ -67,12 +67,14 @@ def word(
     # display a message to explain the file that will be input
     file = str(f":smiley: Searching throug the file called input/proactive.txt!")
     # confirm the file is valid and so the program should search through it for the word
-    words = str(f"Was the word {word} found in the file? {word_search}")
-    # --> TODO: read in the contents of the file
+    words = str(f"Was the word '{word}' found in the file? {human_readable_boolean}")
+    # --> read in the contents of the file
         file1 = open("input/proactive.txt", "r")
         text = file1.read()
     # --> search for the word in the contents of the file by calling function
-            if word in file1:
+            if word in text:
                 return words
-    # --> TODO: display a message about whether the word was or was not found
+    # --> display a message about whether the word was or was not found
+    file = str(f":smiley: Searching throug the file called input/proactive.txt!")
+    words = str(f"Was the word '{word}' found in the file? {human_readable_boolean}")
     # TODO: since the file was not valid and thus you cannot install it display a message
