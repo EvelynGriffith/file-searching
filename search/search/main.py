@@ -29,7 +29,7 @@ def confirm_valid_file(file: Path) -> bool:
 def human_readable_boolean(answer: bool) -> str:
     """Produce a human-readable Yes or No for a boolean value of True or False."""
     # determine if the boolean value is True or False
-    if confirm_valid_file is True:
+    if answer is True:
     # if the input variable answer is True, then return "Yes"
         return "Yes"
     # if the input variable answer is False, then return "No"
@@ -39,8 +39,8 @@ def human_readable_boolean(answer: bool) -> str:
 def word_search(text: str, word: str) -> bool:
     """Determine whether or no.. a word is found in the text in case-sensitive fashion."""
     # perform a case-sensitive search for the word in the provided text
-    file1 = open("input/proactive.txt", "r")
-    text = file1.read()
+
+    # text = file1.read()
     if word in text:
         return True
     else:
@@ -65,18 +65,18 @@ def word(
     # confirm the file is valid and so the program should search through it for the word
     # --> read in the contents of the file
     # --> read in the contents of the file
-    file1 = open("input/proactive.txt", "r")
-    text = file1.read()
-    confirmed_file = confirm_valid_file(text)
+    confirmed_file = confirm_valid_file(file)
     # --> search for the word in the contents of the file by calling function
-    words = word_search(word)
+    file_string = open(file_fully_qualified, "r")
+    # file_string = file_fully_qualified.read()
+    words = word_search(file_string, word)
+    call_function = human_readable_boolean(words)
     # --> display a message about whether the word was or was not found
     # since the file was not valid and thus you cannot install it display a message
     console.print()
-    console.print(f"😃 Searching through the file called {confirmed_file}!")
-
+    console.print(f"😃 Searching through the file called {file_string}!")
     console.print()
-    console.print(f"Was the word {words} found in the file input/proactive.txt? {human_readable_boolean}")
+    console.print(f"Was the word '{word}' found in the file input/proactive.txt? {call_function}")
     console.print()
     console.print(f"😃 Searching through the file called input/notfound.txt!")
     console.print()
