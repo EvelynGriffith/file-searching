@@ -64,14 +64,21 @@ def word(
     # display a message to explain the file that will be input
     # confirm the file is valid and so the program should search through it for the word
     # --> read in the contents of the file
+    # --> read in the contents of the file
     file1 = open("input/proactive.txt", "r")
     text = file1.read()
+    confirmed_file = confirm_valid_file(text)
     # --> search for the word in the contents of the file by calling function
-    if word in text:
-        console.print()
-        console.print(f":smiley: Searching through the file called input/proactive.txt!")
-        console.print()
-        console.print(f"Was the word '{word}' found in the file? {human_readable_boolean}")
-        console.print()
+    words = word_search(word)
     # --> display a message about whether the word was or was not found
-    # TODO: since the file was not valid and thus you cannot install it display a message
+    # since the file was not valid and thus you cannot install it display a message
+    console.print()
+    console.print(f"😃 Searching through the file called {confirmed_file}!")
+
+    console.print()
+    console.print(f"Was the word {words} found in the file input/proactive.txt? {human_readable_boolean}")
+    console.print()
+    console.print(f"😃 Searching through the file called input/notfound.txt!")
+    console.print()
+    console.print(f"🤷 input/notfound.txt was not a valid file")
+    console.print()
