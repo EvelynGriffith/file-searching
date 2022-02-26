@@ -6,11 +6,17 @@
 
 ### What is the output from running the following commands?
 
-TODO: Use a fenced code block to provide the output for this command.
+```😃 Searching through the file called input/proactive.txt!
+
+Was the word 'ethical' found in the file input/proactive.txt? Yes
+```
 
 - `poetry run search --word ethical --dir input --file file.txt`
 
-TODO: Use a fenced code block to provide the output for this command.
+```😃 Searching through the file called input/proactive.txt!
+
+Was the word 'conundrum' found in the file input/proactive.txt? No
+```
 
 - `poetry run search --word ethical --dir input --file proactive.txt`
 

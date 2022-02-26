@@ -27,10 +27,10 @@ def human_readable_boolean(answer: bool) -> str:
     # determine if the boolean value is True or False
     if answer is not True:
     # if the input variable answer is True, then return "Yes"
-        return "No"
+        return "Yes"
     # if the input variable answer is False, then return "No"
     else:
-        return "Yes"
+        return "No"
 
 def word_search(text: str, word: str) -> bool:
     """Determine whether or no.. a word is found in the text in case-sensitive fashion."""
