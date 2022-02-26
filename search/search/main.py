@@ -37,11 +37,18 @@ def word_search(text: str, word: str) -> bool:
     # perform a case-sensitive search for the word in5 the provided text
     # text = file1.read()
     # if text.index(word):
+    # all_words = text.split(" ")
+    # for element in all_words:
+    #     if element == word:
+    #         return True
+    # return False
+        # if text.index(word):
     all_words = text.split(" ")
-    for element in all_words:
-        if element == word:
-            return True
-    return False
+    # for word in all_words:
+    if word in all_words:
+        return True
+    else:
+        return False
     # for element in text.splitlines(' '):
     #     print(element)
     #     if element == word:   

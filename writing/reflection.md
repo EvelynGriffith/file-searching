@@ -20,13 +20,37 @@ TODO: Use a fenced code block to provide the output for this command.
 
 #### A function that confirms that a file containing data is valid
 
-TODO: Use a fenced code block to provide the requested source code
-TODO: Write at least one paragraph to explain the request source code
+```def confirm_valid_file(file: Path) -> bool:
+    """Confirm that the provided file is a valid path."""
+    # determine if the file is not None and if it is a file
+    # return a value to indicate if the file is valid
+    # by checking that the is_file() function returns True
+    if file is not None:
+        if file.is_file():
+            return True
+        else:
+            return False
+    # This function should return True when the file is
+    # not None and it is also a valid file. Otherwise, this
+    # function should return False to indicate it is not value.
+```
+
+This code is going to take the Path called file (while using the import called `from pathlib import Path`) and it's essentially going to open the find the file within its directory by using `file` in the if statement. Using the variable file, because it is linked to Pathlib, will allow the file to be found. Then it will say `if the file is not none:` this means, if there is a file there then continue into the if statement. The if statement will then use `is_file()` to determine if the file is in fact there and a file, and if it is a file then the program will return True if it is not a file or the file doesn't exist the program will return False as is stated through the else statement.
 
 #### A function that produces a human readable response for a boolean value
 
-TODO: Use a fenced code block to provide the requested source code
-TODO: Write at least one paragraph to explain the request source code
+```def human_readable_boolean(answer: bool) -> str:
+    """Produce a human-readable Yes or No for a boolean value of True or False."""
+    # determine if the boolean value is True or False
+    if answer is not True:
+    # if the input variable answer is True, then return "Yes"
+        return "Yes"
+    # if the input variable answer is False, then return "No"
+    else:
+        return "no"
+```
+
+What this function does is really quite simple. Because we need to use a boolean output in the function called word_search (which is our most important function in terms of actually gathering the information from the file), we need to have a function that will turn that boolean answer, meaning an answer that is true or false, into an answer that will be something that a human can understand. In this case that is "yes" or "no". The way that the function does this is by taking a variable called `answer`, which is defined in the name of the function as a boolean, using conditional logic to say "if the answer does not equal true, meaning that if the word was found in the file, the human_readible_boolean function should return the string "yes", otherwise it should return the string "no".
 
 #### A function that performs a case-sensitive search for a word in a file
 
