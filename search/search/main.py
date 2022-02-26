@@ -27,28 +27,30 @@ def human_readable_boolean(answer: bool) -> str:
     # determine if the boolean value is True or False
     if answer is not True:
     # if the input variable answer is True, then return "Yes"
-        return "Yes"
+        return "No"
     # if the input variable answer is False, then return "No"
     else:
-        return "no"
+        return "Yes"
 
 def word_search(text: str, word: str) -> bool:
     """Determine whether or no.. a word is found in the text in case-sensitive fashion."""
     # perform a case-sensitive search for the word in5 the provided text
     # text = file1.read()
-    # if text.index(word):
-    # all_words = text.split(" ")
-    # for element in all_words:
-    #     if element == word:
-    #         return True
-    # return False
-        # if text.index(word):
     all_words = text.split(" ")
+
+    for element in all_words:
+        if element is word:
+            return True
+        else:
+            return False
+        # if text.index(word):
+    # all_words = text.split(" ")
+    # # for word in all_words:
     # for word in all_words:
-    if word in all_words:
-        return True
-    else:
-        return False
+    #     if word == :
+    #         return True
+    #     else:
+    #         return False
     # for element in text.splitlines(' '):
     #     print(element)
     #     if element == word:   
