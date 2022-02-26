@@ -25,7 +25,7 @@ def confirm_valid_file(file: Path) -> bool:
 def human_readable_boolean(answer: bool) -> str:
     """Produce a human-readable Yes or No for a boolean value of True or False."""
     # determine if the boolean value is True or False
-    if answer is True:
+    if answer is not True:
     # if the input variable answer is True, then return "Yes"
         return "Yes"
     # if the input variable answer is False, then return "No"
@@ -39,7 +39,7 @@ def word_search(text: str, word: str) -> bool:
     # if text.index(word):
     all_words = text.split(" ")
     for element in all_words:
-        if element is word:
+        if element == word:
             return False
     return True
     # for element in text.splitlines(' '):
