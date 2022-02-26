@@ -43,13 +43,11 @@ This file is a lot like the pyproject.toml file because it still involves the de
 
 ### What are three different ways in which you can run the `search` program?
 
-TODO: Describe the first way for running the program, giving a command and a paragraph
+```poetry run search --word conundrum --dir input --file proactive.txt```
+This is one way in which you can run the program. This command operates through the CLI function by accessing the poetry shell and running a program called search. It will then run the program using the attribute called word with the word being "conundrum". That means that the program is going to parse through the file called proactive.txt and try to find the word conundrum. If it can't find the word then it would report that the word is not in the file.
 
-- TODO: provide a command
-
-TODO: Describe the second way for running the program, giving a command and a paragraph
-
-- TODO: provide a command
+```poetry run search --word ethical --dir input --file proactive.txt ```
+This is the next way to run the program. This is very similar to the other way of running the program except it changes the attribute so that instead of looking for the word "conundrum" the program will look for the word "ethical".
 
 TODO: Describe the third way for running the program, giving a command and a paragraph
 
@@ -57,7 +55,7 @@ TODO: Describe the third way for running the program, giving a command and a par
 
 ### What was the greatest challenge that you faced when completing this assignment?
 
-TODO: Provide a one-paragraph response that answers this question in your own words.
+I think my greatest challenge was getting the program to actually decide if the word was in the file. Basically, the problem was that my code was looking at the words correctly, but it wasnt really determining whether or not the word was equal to the thing that the function was trying to find.
 
 ### Based on your experiences with this project, what is one way in which you want to improve?
 

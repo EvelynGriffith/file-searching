@@ -40,8 +40,8 @@ def word_search(text: str, word: str) -> bool:
     all_words = text.split(" ")
     for element in all_words:
         if element == word:
-            return False
-    return True
+            return True
+    return False
     # for element in text.splitlines(' '):
     #     print(element)
     #     if element == word:   
