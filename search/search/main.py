@@ -36,10 +36,11 @@ def word_search(text: str, word: str) -> bool:
     """Determine whether or no.. a word is found in the text in case-sensitive fashion."""
     # perform a case-sensitive search for the word in5 the provided text
     # text = file1.read()
+    file = open("input/proactive.txt", "r")
     all_words = text.split(" ")
-
-    for element in all_words:
-        if element is word:
+    for word in file:
+        if word in all_words:
+            print(word)
             return True
         else:
             return False
