@@ -5,8 +5,10 @@ from pathlib import Path
 from rich.console import Console
 
 import typer
+
 # create a Typer object to support the command-line interface
 cli = typer.Typer()
+
 
 def confirms_valid_file(file: Path) -> bool:
     """Confirm that the provided file is a valid path."""
@@ -22,15 +24,17 @@ def confirms_valid_file(file: Path) -> bool:
     # not None and it is also a valid file. Otherwise, this
     # function should return False to indicate it is not value.
 
+
 def human_readable_boolean(answer: bool) -> str:
     """Produce a human-readable Yes or No for a boolean value of True or False."""
     # determine if the boolean value is True or False
     if answer is True:
-    # if the input variable answer is True, then return "Yes"
+        # if the input variable answer is True, then return "Yes"
         return "Yes"
     # if the input variable answer is False, then return "No"
     elif answer is False:
         return "No"
+
 
 def word_search(text: str, word: str) -> bool:
     """Determine whether or no.. a word is found in the text in case-sensitive fashion."""
@@ -41,6 +45,7 @@ def word_search(text: str, word: str) -> bool:
         if word in words:
             return True
     return False
+
 
 @cli.command()
 def word(
@@ -75,13 +80,17 @@ def word(
         console.print()
         console.print(f"😃 Searching through the file called {file_fully_qualified}!")
         console.print()
-        console.print(f"Was the word '{word}' found in the file input/proactive.txt? {call_function}")
-    else: 
+        console.print(
+            f"Was the word '{word}' found in the file input/proactive.txt? {call_function}"
+        )
+    else:
         console.print()
         console.print(f"😃 Searching through the file called {file}!")
         console.print()
         console.print(f"🤷 {file} was not a valid file")
         console.print()
 
+
 def confirm_valid_file():
+    """Be a placeholder."""
     return None
