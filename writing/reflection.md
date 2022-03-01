@@ -48,20 +48,30 @@ This code is going to take the Path called file (while using the import called `
 ```def human_readable_boolean(answer: bool) -> str:
     """Produce a human-readable Yes or No for a boolean value of True or False."""
     # determine if the boolean value is True or False
-    if answer is not True:
+    if answer == True:
     # if the input variable answer is True, then return "Yes"
         return "Yes"
     # if the input variable answer is False, then return "No"
-    else:
-        return "no"
+    elif answer == False:
+        return "No"
 ```
 
 What this function does is really quite simple. Because we need to use a boolean output in the function called word_search (which is our most important function in terms of actually gathering the information from the file), we need to have a function that will turn that boolean answer, meaning an answer that is true or false, into an answer that will be something that a human can understand. In this case that is "yes" or "no". The way that the function does this is by taking a variable called `answer`, which is defined in the name of the function as a boolean, using conditional logic to say "if the answer does not equal true, meaning that if the word was found in the file, the human_readible_boolean function should return the string "yes", otherwise it should return the string "no".
 
 #### A function that performs a case-sensitive search for a word in a file
 
-TODO: Use a fenced code block to provide the requested source code
-TODO: Write at least one paragraph to explain the request source code
+```def word_search(text: str, word: str) -> bool:
+    """Determine whether or no.. a word is found in the text in case-sensitive fashion."""
+    # perform a case-sensitive search for the word in5 the provided text
+    # text = file1.read()
+    for line in text.split("\n"):
+        words = line.split(" ")
+        if word in words:
+            return True
+    return False
+```
+
+This function is going to go into a file, as given by the command entered into the program, and it will read the file, split up the lines and determine if the entered word is in the file. The function will then return true if the word is in the file and be passed into the human_readible_boolean function to give us an answer that we will be able to interpret.
 
 ### What is the purpose of the `pyproject.toml` file?
 
@@ -79,9 +89,8 @@ This is one way in which you can run the program. This command operates through 
 ```poetry run search --word ethical --dir input --file proactive.txt```
 This is the next way to run the program. This is very similar to the other way of running the program except it changes the attribute so that instead of looking for the word "conundrum" the program will look for the word "ethical".
 
-TODO: Describe the third way for running the program, giving a command and a paragraph
-
-- TODO: provide a command
+```poetry run search --word proactive --dir input --file notfound.txt```
+This is the final way to run the program which will allow for us to test whether or not an answer will be reported if the file itself doesnt exist.
 
 ### What was the greatest challenge that you faced when completing this assignment?
 
