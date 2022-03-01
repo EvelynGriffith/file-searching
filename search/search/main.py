@@ -22,17 +22,14 @@ def confirms_valid_file(file: Path) -> bool:
     # not None and it is also a valid file. Otherwise, this
     # function should return False to indicate it is not value.
 
-def confirm_valid_file():
-    return None
-
 def human_readable_boolean(answer: bool) -> str:
     """Produce a human-readable Yes or No for a boolean value of True or False."""
     # determine if the boolean value is True or False
-    if answer == True:
+    if answer is True:
     # if the input variable answer is True, then return "Yes"
         return "Yes"
     # if the input variable answer is False, then return "No"
-    elif answer == False:
+    elif answer is False:
         return "No"
 
 def word_search(text: str, word: str) -> bool:
@@ -69,7 +66,7 @@ def word(
     # --> search for the word in the contents of the file by calling function
     # --> display a message about whether the word was or was not found
     # since the file was not valid and thus you cannot install it display a message
-    if confirm_valid_file == True:
+    if confirm_valid_file is True:
         file = open(file_fully_qualified, "r")
         file_string = file.read()
         # print(file_string)
@@ -83,5 +80,8 @@ def word(
         console.print()
         console.print(f"😃 Searching through the file called {file}!")
         console.print()
-        console.print(f"🤷 input/notfound.txt was not a valid file")
+        console.print(f"🤷 {file} was not a valid file")
         console.print()
+
+def confirm_valid_file():
+    return None
