@@ -6,19 +6,20 @@
 
 ### What is the output from running the following commands?
 
-```😃 Searching through the file called input/proactive.txt!
+- `poetry run search --word ethical --dir input --file file.txt`
+
+```😃 Searching through the file called file.txt!
+
+🤷 input/notfound.txt was not a valid file
+```
+
+- `poetry run search --word ethical --dir input --file proactive.txt`
+
+```😃 Searching through the file called input\proactive.txt!
 
 Was the word 'ethical' found in the file input/proactive.txt? Yes
 ```
 
-- `poetry run search --word ethical --dir input --file file.txt`
-
-```😃 Searching through the file called input/proactive.txt!
-
-Was the word 'conundrum' found in the file input/proactive.txt? No
-```
-
-- `poetry run search --word ethical --dir input --file proactive.txt`
 
 ## Source Code and Configuration Files
 

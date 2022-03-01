@@ -8,7 +8,7 @@ import typer
 # create a Typer object to support the command-line interface
 cli = typer.Typer()
 
-def confirm_valid_file(file: Path) -> bool:
+def confirms_valid_file(file: Path) -> bool:
     """Confirm that the provided file is a valid path."""
     # determine if the file is not None and if it is a file
     # return a value to indicate if the file is valid
@@ -62,11 +62,11 @@ def word(
     # confirm the file is valid and so the program should search through it for the word
     # --> read in the contents of the file
     # --> read in the contents of the file
-    confirmed_file = confirm_valid_file(file_fully_qualified)
+    confirm_valid_file = confirms_valid_file(file_fully_qualified)
     # --> search for the word in the contents of the file by calling function
     # --> display a message about whether the word was or was not found
     # since the file was not valid and thus you cannot install it display a message
-    if confirmed_file == True:
+    if confirm_valid_file == True:
         file = open(file_fully_qualified, "r")
         file_string = file.read()
         # print(file_string)
