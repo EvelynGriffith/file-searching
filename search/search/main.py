@@ -25,25 +25,36 @@ def confirm_valid_file(file: Path) -> bool:
 def human_readable_boolean(answer: bool) -> str:
     """Produce a human-readable Yes or No for a boolean value of True or False."""
     # determine if the boolean value is True or False
-    if answer is not True:
+    if answer == True:
     # if the input variable answer is True, then return "Yes"
         return "Yes"
     # if the input variable answer is False, then return "No"
-    else:
+    elif answer == False:
         return "No"
 
 def word_search(text: str, word: str) -> bool:
     """Determine whether or no.. a word is found in the text in case-sensitive fashion."""
     # perform a case-sensitive search for the word in5 the provided text
     # text = file1.read()
-    file = open("input/proactive.txt", "r")
-    all_words = text.split(" ")
-    for word in file:
-        if word in all_words:
-            print(word)
+    for line in text.split("\n"):
+        words = line.split(" ")
+        if word in words:
             return True
-        else:
-            return False
+    return False
+        # text = file1.read()
+    # words = text.split("\n")
+    # print(words)
+    # for line in words:
+    #     print(line)
+    #     if word in line:
+    #         return True
+    #     else:
+    #         return False
+    # lines = text.splitlines()
+    # for wordtxt in lines.split():
+    #     if wordtxt == word:
+    #         return True
+    # return False
         # if text.index(word):
     # all_words = text.split(" ")
     # # for word in all_words:
@@ -71,7 +82,8 @@ def word(
     # add extra space after the command to run the program
     console.print()
     # create the full name of the file
-    file_fully_qualified = dir / file
+    # file_fully_qualified = dir / file
+    file_fully_qualified = Path(f"{dir}/{file}")
     # consult the expected output on the course web site for a description
     # of what type of output your program needs to produce when running in the terminal window
     # display a message to explain the file that will be input
@@ -80,21 +92,21 @@ def word(
     # --> read in the contents of the file
     confirmed_file = confirm_valid_file(file_fully_qualified)
     # --> search for the word in the contents of the file by calling function
-    file = open(file_fully_qualified, "r")
-    file_string = file.read()
-    # print(file_string)
-    words = word_search(file_string, word)
-    call_function = human_readable_boolean(words)
     # --> display a message about whether the word was or was not found
     # since the file was not valid and thus you cannot install it display a message
-    if confirmed_file is True:
+    if confirmed_file == True:
+        file = open(file_fully_qualified, "r")
+        file_string = file.read()
+        # print(file_string)
+        words = word_search(file_string, word)
+        call_function = human_readable_boolean(words)
         console.print()
-        console.print(f"😃 Searching through the file called input/proactive.txt!")
+        console.print(f"😃 Searching through the file called {file_fully_qualified}!")
         console.print()
         console.print(f"Was the word '{word}' found in the file input/proactive.txt? {call_function}")
     else: 
         console.print()
-        console.print(f"😃 Searching through the file called input/notfound.txt!")
+        console.print(f"😃 Searching through the file called {file}!")
         console.print()
         console.print(f"🤷 input/notfound.txt was not a valid file")
         console.print()
